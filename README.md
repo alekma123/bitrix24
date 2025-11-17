@@ -33,3 +33,9 @@ c логированием в /local/php_interface_php/logs/handler.log
  
 <img width="1228" height="276" alt="image" src="https://github.com/user-attachments/assets/e30c844a-a300-469b-92d5-35bd386ccd7b" />
 
+- ID - ID сделки
+- NEW_STAGE - новый статус сделки 
+- OLD_STAGE - предыдущий стату сделки
+- MOVED_TIME -  когда была изменена стадия сделки
+- UPDATED_BY_ID - кто изменил стадию сделки, id сотрудника
+- UPDATED_BY_FULL_NAME - кто изменил стадию сделки, полное имя сотрудника
