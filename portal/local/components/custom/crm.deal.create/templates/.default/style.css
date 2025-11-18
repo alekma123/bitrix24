@@ -1,0 +1,15 @@
+.container-deal{
+    max-width: 413px;
+    margin: auto;
+}
+
+.deal-caption, .deal-message {
+    margin: 20px;
+}
+
+.deal-message {
+    display: none;
+}
+.form-title {
+    padding: 0 12px;
+}
