@@ -19,11 +19,11 @@
                 <div class="ui-form-content">
                     <div class="ui-ctl ui-ctl-textbox ui-ctl-w100">
                         <input
-                                name="title"
-                                type="text"
-                                class="ui-ctl-element"
-                                placeholder="Сделка #"
-                                required
+                            name="title"
+                            type="text"
+                            class="ui-ctl-element"
+                            placeholder="Сделка #"
+                            required
                         >
                     </div>
                 </div>
@@ -35,13 +35,13 @@
                 <div class="ui-form-content">
                     <div class="ui-ctl ui-ctl-textbox ui-ctl-w100">
                         <input
-                                id="fio"
-                                type="text"
-                                class="ui-ctl-element"
-                                placeholder=""
-                                value=""
-                                data-id=""
-                                required
+                            id="fio"
+                            type="text"
+                            class="ui-ctl-element"
+                            placeholder=""
+                            value=""
+                            data-id=""
+                            required
                         >
                     </div>
                 </div>
@@ -53,34 +53,34 @@
                 <div class="ui-form-content">
                     <div class="ui-ctl ui-ctl-textbox ui-ctl-w100">
                         <input
-                                name="opportunity"
-                                type="number"
-                                class="ui-ctl-element"
-                                placeholder="Сумма"
-                                min = "0"
-                                required
+                            name="opportunity"
+                            type="number"
+                            class="ui-ctl-element"
+                            placeholder="Сумма"
+                            min="0"
+                            required
                         >
                     </div>
                 </div>
             </div>
             <div class="ui-form-row">
                 <div class="ui-form-label">
-                    <div class="ui-ctl-label-text">Описание </div>
+                    <div class="ui-ctl-label-text">Описание</div>
                 </div>
                 <div class="ui-ctl ui-ctl-textarea">
                     <textarea
-                            name="description"
-                            class="ui-ctl-element ui-ctl-resize-y"
+                        name="description"
+                        class="ui-ctl-element ui-ctl-resize-y"
                     ></textarea>
                 </div>
             </div>
 
             <div class="ui-btn-container ui-btn-container-center">
                 <input
-                        type="submit"
-                        class="ui-btn ui-btn-success"
-                        name="submit"
-                        value="Сохранить"
+                    type="submit"
+                    class="ui-btn ui-btn-success"
+                    name="submit"
+                    value="Сохранить"
                 >
             </div>
         </form>
@@ -88,29 +88,29 @@
 </div>
 
 
-
 <?php
 
-\Bitrix\Main\UI\Extension::load("ui.forms");
-\Bitrix\Main\UI\Extension::load("ui.layout-form");
-\Bitrix\Main\UI\Extension::load('ui.entity-selector');
-\Bitrix\Main\UI\Extension::load("ui.buttons");
+use Bitrix\Main\UI\Extension;
 
-\Bitrix\Main\UI\Extension::load('custom.crm-deal');
+Extension::load("ui.forms");
+Extension::load("ui.layout-form");
+Extension::load('ui.entity-selector');
+Extension::load("ui.buttons");
+
+Extension::load('custom.crm-deal');
 ?>
 
 <script>
 
-    BX.ready(function(){
+    BX.ready(function () {
         let crmDeal = new BX.Custom.Crmdeal({
-            'targetNode': document.getElementById('fio')
+            'nodeInput': document.getElementById('fio')
         })
         crmDeal.init()
 
         BX.Crm.Deal.Create.init()
 
     })
-
 
 
 </script>

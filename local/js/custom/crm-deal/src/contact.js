@@ -1,41 +1,37 @@
 import './imask';
 import 'ui.notification'
+
 export class Contact {
-    constructor() {
+    constructor () {
         this.createDialog()
         this.initCreateContact()
     }
 
-    show()
-    {
-        if (!this.dialog.isShown())
-        {
+    show () {
+        if (!this.dialog.isShown()) {
             this.dialog.show()
             this.initMask()
         }
     }
 
-    initMask()
-    {
-        let phoneInput = document.getElementById('tel')
+    initMask () {
+        const phoneInput = document.getElementById('tel')
         IMask(phoneInput, {
             mask: '+{7} (000) 000-00-00'
-        });
+        })
     }
 
-
-    createDialog()
-    {
+    createDialog () {
         const node = ''
-        const context =  this
+        const context = this
         this.dialog = BX.PopupWindowManager.create('create', node, {
             content: context.getForm(),
-            offsetTop : 1,
-            offsetLeft : 0,
+            offsetTop: 1,
+            offsetLeft: 0,
             width: 400,
-            lightShadow : true,
-            closeIcon : true,
-            closeByEsc : true,
+            lightShadow: true,
+            closeIcon: true,
+            closeByEsc: true,
             padding: 0,
             autoHide: true,
             overlay: true,
@@ -51,22 +47,22 @@ export class Contact {
         })
     }
 
-    createContact(event) {
-        let formData = new FormData(document.getElementById('create-contact'))
-        this.request( Object.fromEntries(formData.entries()) )
+    createContact (event) {
+        const formData = new FormData(document.getElementById('create-contact'))
+        this.request(Object.fromEntries(formData.entries()))
     }
 
-    initCreateContact() {
+    initCreateContact () {
         const form = document.getElementById('create')
 
-        form.addEventListener('submit', function(event){
+        form.addEventListener('submit', (event) => {
             event.preventDefault()
             const formData = new FormData(event.target)
             this.request(Object.fromEntries(formData))
-        }.bind(this))
+        })
     }
 
-    request(contact) {
+    request (contact) {
         BX.ajax.runComponentAction('custom:crm.deal.create', 'createContact', {
             mode: 'ajax',
             data: {
@@ -89,10 +85,9 @@ export class Contact {
         });
     }
 
-    getForm()
-    {
-        let div  = document.createElement('div')
-        div.innerHTML=`
+    getForm () {
+        const div = document.createElement('div')
+        div.innerHTML = `
            <form class="ui-form" id="create-contact">
                 <div class="ui-form-row">
                     <div class="ui-form-label">

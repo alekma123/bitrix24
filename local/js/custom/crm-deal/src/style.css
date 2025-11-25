@@ -1,8 +1,9 @@
-ul.contact-items {
+.contact-items {
     list-style-type: none;
     padding-left: 10px;
 }
-ul.contact-items li {
+
+.contact-items li {
     padding: 5px;
     cursor: pointer;
     border-bottom: 1px solid;

@@ -1,11 +1,11 @@
 BX.namespace('BX.Crm.Deal.Create');
 BX.Crm.Deal.Create = {
 
-    init: function(){
+    init: function () {
         this.createAction();
     },
 
-    showMessage: function(text, type) {
+    showMessage: function (text, type) {
 
         let message = document.getElementById('result-create-deal')
         let textMessage = message.querySelector('.ui-alert')
@@ -20,7 +20,7 @@ BX.Crm.Deal.Create = {
         message.style.display = 'block'
     },
 
-    createDeal: function(data) {
+    createDeal: function (data) {
 
         BX.ajax.runComponentAction('custom:crm.deal.create', 'createDeal', {
             mode: 'class',
@@ -43,22 +43,22 @@ BX.Crm.Deal.Create = {
 
         }.bind(this), function (response) {
 
-            this.showMessage( response.errors[0].message , 'error')
+            this.showMessage(response.errors[0].message, 'error')
 
         }.bind(this));
 
     },
 
-    createAction: function(){
+    createAction: function () {
 
         let form = document.getElementById('from-deal-create')
 
-        form.addEventListener('submit', function(event) {
+        form.addEventListener('submit', function (event) {
 
             event.preventDefault();
             let formData = new FormData(event.target);
             formData.set('contact_id', form.fio.dataset['id'])
-            this.createDeal( Object.fromEntries(formData.entries()) )
+            this.createDeal(Object.fromEntries(formData.entries()))
 
         }.bind(this));
     },

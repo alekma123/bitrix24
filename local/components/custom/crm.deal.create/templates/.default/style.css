@@ -1,4 +1,4 @@
-.container-deal{
+.container-deal {
     max-width: 413px;
     margin: auto;
 }
@@ -10,6 +10,7 @@
 .deal-message {
     display: none;
 }
+
 .form-title {
     padding: 0 12px;
 }
